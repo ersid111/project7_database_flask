@@ -1,0 +1,19 @@
+Pre - Requisites 
+
+install mysql connector for python
+
+
+https://dev.mysql.com/downloads/connector/python/
+
+
+pip install Flask-MySQLdb
+
+Step 1. Import library >> from flask_mysqldb import MySQL
+step 2. MySQL Configuration 
+        app.config['MYSQL_HOST'] = 'localhost'
+        app.config['MYSQL_USER'] = 'root'
+        app.config['MYSQL_PASSWORD'] = 'pasword'
+        app.config['MYSQL_DB'] = 'databaseName'
+
+step 3. Create object of MySQL with Flask Object 
+     >> mysql = app(MySQL)

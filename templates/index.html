@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <title>Index page</title>
+</head>
+<style>
+    
+    table {
+        border-collapse: separate;
+        width: 90%;
+        padding:0;
+        margin:0;
+        white-space: normal;
+    }
+
+    th
+    td {
+        text-align: center;
+        padding: 6px;
+        white-space: normal;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    th {
+        background-color: #04AA6D;
+        color: white;
+    }
+   
+</style>
+
+<body>
+
+    <form action="/data" method="POST">
+        <label> Date</label> <input type="Date" name="Date"><br><br>
+        <label> work </label> <input type="text" name="work"><br><br>
+        <label> time_in </label> <input type="time" name="time_in"><br><br>
+        <label> time_out </label> <input type="time" name="time_out"><br><br>
+        <input type="submit" name="submit_button" value="Write">
+        <input type="submit" name="submit_button" value="read">
+        <label> Delete date </label> <input type="text" name="delete_data"><br><br>
+        <input type="submit" name="submit_button" value="delete">
+
+    </form>
+    <label> {{success}}</label>
+
+
+
+    <table>
+
+        <tr>
+            <th>Date</th>
+            <th>work</th>
+            <th>time_in</th>
+            <th>time_out</th>
+        </tr>
+        
+        <tr>
+            {% for item in data %}
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td>{{item[2]}}</td>
+            <td>{{item[3]}}</td>
+        </tr><br>
+        {% endfor %}
+    </table>
+
+</body>
+
+</html>
